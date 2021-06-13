@@ -217,8 +217,6 @@ function searchBook() {
     book.title.toLowerCase().includes(searchKey.toLowerCase())
   );
 
-  console.log(bookFilter.length);
-
   const completeExistList = completeBookshelf.querySelectorAll("article");
   for (completeList of completeExistList) {
     completeList.remove();
@@ -229,7 +227,7 @@ function searchBook() {
     incompleteList.remove();
   }
 
-  if (bookFilter > 0) {
+  if (bookFilter.length > 0) {
     textKey.innerText = `kami menemukan ${bookFilter.length} buku dengan kata kunci "${searchKey}"`;
   } else {
     textKey.innerText = `kami tidak dapat menemukan buku dengan kata kunci "${searchKey}"`;
